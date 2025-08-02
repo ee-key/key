@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Активация ключа</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            background-color: #111;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #submitKey {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        #submitKey:hover {
+            background-color: #45a049;
+        }
+        
+        #buyKey {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        #buyKey:hover {
+            background-color: #e67e22;
+        }
+        
+        #message {
+            margin-top: 20px;
+            color: #ff3333;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Активация чита для Standoff2</h1>
+        <input type="text" id="keyInput" placeholder="Введите ваш ключ активации">
+        <button id="submitKey">Ввести ключ</button>
+        <button id="buyKey">Купить ключ</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('submitKey').addEventListener('click', function() {
+            const key = document.getElementById('keyInput').value.trim();
+            const message = document.getElementById('message');
+            
+            if (key === '') {
+                message.textContent = 'Пожалуйста, введите ключ';
+            } else {
+                message.textContent = 'Ключ не верный, возможно вы купили софт у скамера, или бот дал сбой, тем самым дав недействительный ключ активации. Обратитесь в поддержку в тг: @kayoshi444';
+            }
+        });
+        
+        document.getElementById('buyKey').addEventListener('click', function() {
+            window.location.href = 'https://t.me/suportt_bot';
+        });
+    </script>
+</body>
+</html>
